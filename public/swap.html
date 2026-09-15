@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subtitle swap</title>
+<style>
+  :root { --bg:#14101a; --card:#1e1826; --line:#362b42; --ink:#f2ecf5;
+          --muted:#a294b0; --accent:#e8489b; --ok:#4ade80; --warn:#fbbf24; }
+  *{box-sizing:border-box}
+  body{margin:0;padding:32px 20px 64px;background:var(--bg);color:var(--ink);
+       font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif}
+  .wrap{max-width:820px;margin:0 auto}
+  h1{font-size:21px;margin:0 0 6px}
+  p.sub{color:var(--muted);margin:0 0 24px;font-size:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;margin-bottom:18px}
+  label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+  input[type=password]{width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--line);
+       background:#171220;color:var(--ink);font-size:14px}
+  .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  button{background:var(--accent);color:#fff;border:0;padding:10px 18px;border-radius:8px;
+       font-size:14px;font-weight:600;cursor:pointer}
+  button.ghost{background:transparent;color:var(--muted);border:1px solid var(--line)}
+  button:disabled{opacity:.45;cursor:not-allowed}
+  #log{font:12px/1.5 ui-monospace,Menlo,Consolas,monospace;white-space:pre-wrap;
+       max-height:420px;overflow:auto;margin-top:8px}
+  .ok{color:var(--ok)} .warn{color:var(--warn)} .err{color:#f87171} .dim{color:var(--muted)}
+  .bar{height:6px;background:#241c2e;border-radius:99px;overflow:hidden;margin-top:14px}
+  .bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .2s}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Subtitle swap</h1>
+  <p class="sub">Replaces Mux's auto-generated subtitles with the corrected versions. Paced to stay inside Mux's rate limits, so it is not quick. Safe to stop and rerun. For hand-reviewed files, use <a href="/reviewed.html" style="color:var(--accent)">reviewed.html</a> instead.</p>
+
+  <div class="card">
+    <label for="key">Admin key</label>
+    <input id="key" type="password" autocomplete="off" placeholder="the ADMIN_KEY you set in Vercel">
+    <div class="row">
+      <button id="btnList" class="ghost">1. Check what needs doing</button>
+      <button id="btnAdd" disabled>2. Add corrected subtitles</button>
+      <button id="btnClean" class="ghost" disabled>3. Remove the old ones</button>
+    </div>
+    <div class="bar"><i id="bar"></i></div>
+  </div>
+
+  <div class="card"><div id="log" class="dim">Nothing run yet.</div></div>
+</div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const log = (msg, cls='') => {
+  const l = $('log');
+  if (l.classList.contains('dim')) { l.classList.remove('dim'); l.textContent = ''; }
+  l.insertAdjacentHTML('beforeend', `<span class="${cls}">${msg}</span>\n`);
+  l.scrollTop = l.scrollHeight;
+};
+const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+const progress = (a,b) => { $('bar').style.width = b ? (a/b*100)+'%' : '0'; };
+
+let todo = [];
+
+async function call(body) {
+  const r = await fetch('/api/swap-subtitles', {
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({ key: $('key').value, ...body })
+  });
+  const j = await r.json().catch(() => ({ error:'bad response' }));
+  if (!r.ok) throw new Error(j.error || r.status);
+  return j;
+}
+
+$('btnList').onclick = async () => {
+  try {
+    log('Checking...', 'dim');
+    const j = await call({ action:'list' });
+    todo = j.todo;
+    log(`${todo.length} to correct, ${j.done} already done, ${j.skipped.length} skipped.`, 'ok');
+    todo.forEach(t => log('  · ' + t.title));
+    j.skipped.forEach(s => log(`  skipped: ${s.title} (${s.why})`, 'dim'));
+    $('btnAdd').disabled = todo.length === 0;
+    $('btnClean').disabled = false;
+  } catch (e) { log('Error: ' + e.message, 'err'); }
+};
+
+async function run(action, label) {
+  if (!todo.length) { log('Run step 1 first.', 'warn'); return; }
+  $('btnAdd').disabled = $('btnClean').disabled = $('btnList').disabled = true;
+  log('\n' + label + ' (' + todo.length + ')', 'ok');
+  let i = 0, failed = 0;
+  for (const t of todo) {
+    let ok = false;
+    for (let attempt = 0; attempt < 3 && !ok; attempt++) {
+      try {
+        const body = action === 'add'
+          ? { action: action, assetId: t.id, playback: t.playback, trackId: t.trackId, staleIds: t.staleIds }
+          : { action: action, assetId: t.id };
+        const j = await call(body);
+        log('  ' + t.title + ': ' + j.result);
+        ok = true;
+      } catch (e) {
+        if (attempt === 2) { log('  ' + t.title + ': ' + e.message, 'err'); failed++; }
+        else { await wait(2500 * (attempt + 1)); }
+      }
+    }
+    progress(++i, todo.length);
+    await wait(900);
+  }
+  log(failed ? 'Finished with ' + failed + ' failures. Run step 1, then this step again, to retry them.'
+             : 'Done, no failures.', failed ? 'warn' : 'ok');
+  $('btnAdd').disabled = $('btnClean').disabled = $('btnList').disabled = false;
+}
+
+$('btnAdd').onclick   = () => run('add', 'Adding corrected subtitles');
+$('btnClean').onclick = () => run('cleanup', 'Removing auto-generated tracks');
+</script>
+</body>
+</html>

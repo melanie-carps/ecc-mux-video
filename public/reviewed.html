@@ -1,0 +1,112 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Publish reviewed subtitles</title>
+<style>
+  :root { color-scheme: light dark; --pink:#E6007E; --ink:#1a1a1a; --dim:#6b6b6b;
+          --line:#e3e3e3; --bg:#fafafa; --card:#fff; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#ededed; --dim:#9a9a9a; --line:#333; --bg:#161616; --card:#1e1e1e; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; padding:24px 16px 48px; background:var(--bg); color:var(--ink);
+         font:15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; }
+  .wrap { max-width:720px; margin:0 auto; }
+  h1 { font-size:22px; margin:0 0 4px; color:var(--pink); }
+  p.sub { margin:0 0 24px; color:var(--dim); }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px;
+          padding:18px; margin-bottom:18px; }
+  label { display:block; font-weight:600; margin-bottom:6px; font-size:13px; }
+  input[type=password] { width:100%; padding:10px 12px; font-size:15px; border-radius:7px;
+          border:1px solid var(--line); background:var(--bg); color:var(--ink); }
+  button { background:var(--pink); color:#fff; border:0; border-radius:7px; padding:11px 18px;
+           font-size:15px; font-weight:600; cursor:pointer; }
+  button:disabled { opacity:.45; cursor:default; }
+  ul.files { margin:0; padding-left:20px; color:var(--dim); font-size:13px; }
+  #out { white-space:pre-wrap; font:13px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+         background:var(--card); border:1px solid var(--line); border-radius:10px;
+         padding:14px; min-height:90px; overflow-x:auto; }
+  .ok{color:#128a3d}.err{color:#c0392b}.warn{color:#b8860b}.dim{color:var(--dim)}
+  .bar { height:5px; background:var(--line); border-radius:3px; overflow:hidden; margin:12px 0 0; }
+  .bar i { display:block; height:100%; width:0; background:var(--pink); transition:width .2s; }
+</style>
+<div class="wrap">
+  <h1>Publish reviewed subtitles</h1>
+  <p class="sub">Replaces each video's subtitle track with the reviewed file served from this
+  deployment. Safe to run more than once.</p>
+
+  <div class="card">
+    <label for="key">Admin key</label>
+    <input id="key" type="password" autocomplete="off" placeholder="paste your admin key">
+  </div>
+
+  <div class="card">
+    <button id="go">Publish to Mux</button>
+    <div class="bar"><i id="bar"></i></div>
+  </div>
+
+  <div class="card">
+    <strong style="font-size:13px">Files to publish</strong>
+    <ul class="files" id="list"><li>loading…</li></ul>
+  </div>
+
+  <div id="out">Ready.</div>
+</div>
+<script>
+const $ = id => document.getElementById(id);
+const wait = ms => new Promise(r => setTimeout(r, ms));
+let items = [];
+
+function log(msg, cls) {
+  const s = document.createElement('span');
+  if (cls) s.className = cls;
+  s.textContent = msg + '\n';
+  $('out').appendChild(s);
+  $('out').scrollTop = $('out').scrollHeight;
+}
+
+fetch('/vtt/manifest.json').then(r => r.json()).then(m => {
+  items = m;
+  $('list').innerHTML = m.map(x => `<li>${x.title}</li>`).join('');
+}).catch(e => { $('list').innerHTML = '<li class="err">could not load manifest</li>'; });
+
+$('go').onclick = async () => {
+  const key = $('key').value.trim();
+  if (!key) { log('Enter the admin key first.', 'warn'); return; }
+  if (!items.length) { log('Manifest not loaded.', 'warn'); return; }
+  $('go').disabled = true;
+  $('out').textContent = '';
+  log('Publishing ' + items.length + ' videos', 'ok');
+
+  let i = 0, failed = 0;
+  for (const it of items) {
+    let ok = false;
+    for (let attempt = 0; attempt < 3 && !ok; attempt++) {
+      try {
+        const r = await fetch('/api/swap-subtitles', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ key, action: 'replace', assetId: it.assetId, slug: it.slug }),
+        });
+        const j = await r.json();
+        if (!r.ok) throw new Error(j.error || r.status);
+        log('  ' + it.title + ': ' + j.result);
+        ok = true;
+      } catch (e) {
+        // a wrong key or a bad request will never succeed; don't retry it
+        if (/wrong key|required|bad slug/i.test(e.message)) {
+          log('  ' + it.title + ': ' + e.message, 'err'); failed++; break;
+        }
+        if (attempt === 2) { log('  ' + it.title + ': ' + e.message, 'err'); failed++; }
+        else { await wait(2500 * (attempt + 1)); }
+      }
+    }
+    $('bar').style.width = Math.round((++i / items.length) * 100) + '%';
+    await wait(900);
+  }
+  log(failed ? '\nFinished with ' + failed + ' failures. Run again to retry them.'
+             : '\nDone, no failures. Give Mux a minute, then check a video.',
+      failed ? 'warn' : 'ok');
+  $('go').disabled = false;
+};
+</script>
