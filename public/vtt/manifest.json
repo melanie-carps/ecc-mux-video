@@ -1,102 +1,395 @@
 [
- {
-  "title": "Domination course welcome video",
-  "assetId": "s5iFfq3KyT1cEdJf5z02cWqsY4BcQsJmtx5BMxvHd01EM",
-  "slug": "domination-course-welcome-video",
-  "done": true
- },
- {
-  "title": "Sub self care",
-  "assetId": "yJb02V9Nz01lawzW5UZU9OfQIvE7zZmq4SSEOyXlkKlgw",
-  "slug": "sub-self-care",
-  "done": true
- },
- {
-  "title": "Consent, boundaries and safety as a sub",
-  "assetId": "LO4vbswrM41901SuCc8WN7KyGIyQ200sVucsmu02qBwu9o",
-  "slug": "consent-boundaries-and-safety-as-a-sub",
-  "done": true
- },
- {
-  "title": "Building a connection with your sub",
-  "assetId": "HIoA018LzUe1M5lbrX011nKta115A1nOxeObRwHUi5vuE",
-  "slug": "building-a-connection-with-your-sub",
-  "done": true
- },
- {
-  "title": "Humiliation",
-  "assetId": "xnyvg01Glw01juh2Kk2ndNlL29takubHC8Ua9mofd02wbQ",
-  "slug": "humiliation",
-  "done": true
- },
- {
-  "title": "Corporal Punishment",
-  "assetId": "1xMmm5UViQq1JO1NlPvBsmY6GO2GbQoBLR1ErS44giA",
-  "slug": "corporal-punishment",
-  "done": true
- },
- {
-  "title": "SPH",
-  "assetId": "VC0201F4M3pC8ip02mz01U5DhnT6AAEZr01lYvRHCRoiihoc",
-  "slug": "sph",
-  "done": true
- },
- {
-  "title": "JOI",
-  "assetId": "02VL6ZMISWAUaUA802RVMCrnXCARV7lTJVNFMbPGKgowM",
-  "slug": "joi",
-  "done": true
- },
- {
-  "title": "Sissification",
-  "assetId": "WV02En00DqSlw1UYVzpy8Lw1Iwzvvovt6QMlwpraBGIOU",
-  "slug": "sissification",
-  "done": true
- },
- {
-  "title": "Findom",
-  "assetId": "N02802HW00ZAZM6P1hLNFPE4lI5lK400Ye8z1b66WDQs02TM",
-  "slug": "findom",
-  "done": true
- },
- {
-  "title": "Ethical Kink safety consent and boundaries",
-  "assetId": "KTRbuXBKwi5mepl7pbubEEq5HqZ7bukH31xcsu4Ylr00",
-  "slug": "ethical-kink-safety-consent-and-boundaries"
- },
- {
-  "title": "The art of fantasy",
-  "assetId": "5NKPoyk4RVHra39CW9uM51FWVhQT8CjreGs02TU02Mank",
-  "slug": "the-art-of-fantasy"
- },
- {
-  "title": "Taboo talk",
-  "assetId": "oPGQhAdgyfcmwKkbDS3BX8FJOSac4OWPntXNK02RlK02M",
-  "slug": "taboo-talk"
- },
- {
-  "title": "Dare to dom?",
-  "assetId": "bCm02PIujaQerDncdTxIa01PdIeR02Wa8Ov8SRK2ZutjLQ",
-  "slug": "dare-to-dom"
- },
- {
-  "title": "Online domination tips and tricks",
-  "assetId": "00KcjC2gl1Hdn00K7a02Eu53B7jmIUxQxxGxiUVIuc2Gak",
-  "slug": "online-domination-tips-and-tricks"
- },
- {
-  "title": "Webcam masterclass",
-  "assetId": "ZGtre1NDTl009P2K9jnwaQ0001AUkpaahdK14ANMZQHQWw",
-  "slug": "webcam-masterclass"
- },
- {
-  "title": "Adultwork 101",
-  "assetId": "j8r3Y4SNEz0102beR15l5Dsp2w1ZzyKG8MjEwRxzbeGx00",
-  "slug": "adultwork-101"
- },
- {
-  "title": "What to do with your subs",
-  "assetId": "Ru1F1zI4j02LUFP9DZ6X299dJ5JlTTcNftb9wt3HCEp8",
-  "slug": "what-to-do-with-your-subs"
- }
+  {
+    "title": "Domination course welcome video",
+    "assetId": "s5iFfq3KyT1cEdJf5z02cWqsY4BcQsJmtx5BMxvHd01EM",
+    "slug": "domination-course-welcome-video",
+    "done": true
+  },
+  {
+    "title": "Sub self care",
+    "assetId": "yJb02V9Nz01lawzW5UZU9OfQIvE7zZmq4SSEOyXlkKlgw",
+    "slug": "sub-self-care",
+    "done": true
+  },
+  {
+    "title": "Consent, boundaries and safety as a sub",
+    "assetId": "LO4vbswrM41901SuCc8WN7KyGIyQ200sVucsmu02qBwu9o",
+    "slug": "consent-boundaries-and-safety-as-a-sub",
+    "done": true
+  },
+  {
+    "title": "Building a connection with your sub",
+    "assetId": "HIoA018LzUe1M5lbrX011nKta115A1nOxeObRwHUi5vuE",
+    "slug": "building-a-connection-with-your-sub",
+    "done": true
+  },
+  {
+    "title": "Humiliation",
+    "assetId": "xnyvg01Glw01juh2Kk2ndNlL29takubHC8Ua9mofd02wbQ",
+    "slug": "humiliation",
+    "done": true
+  },
+  {
+    "title": "Corporal Punishment",
+    "assetId": "1xMmm5UViQq1JO1NlPvBsmY6GO2GbQoBLR1ErS44giA",
+    "slug": "corporal-punishment",
+    "done": true
+  },
+  {
+    "title": "SPH",
+    "assetId": "VC0201F4M3pC8ip02mz01U5DhnT6AAEZr01lYvRHCRoiihoc",
+    "slug": "sph",
+    "done": true
+  },
+  {
+    "title": "JOI",
+    "assetId": "02VL6ZMISWAUaUA802RVMCrnXCARV7lTJVNFMbPGKgowM",
+    "slug": "joi",
+    "done": true
+  },
+  {
+    "title": "Sissification",
+    "assetId": "WV02En00DqSlw1UYVzpy8Lw1Iwzvvovt6QMlwpraBGIOU",
+    "slug": "sissification",
+    "done": true
+  },
+  {
+    "title": "Findom",
+    "assetId": "N02802HW00ZAZM6P1hLNFPE4lI5lK400Ye8z1b66WDQs02TM",
+    "slug": "findom",
+    "done": true
+  },
+  {
+    "title": "Ethical Kink safety consent and boundaries",
+    "assetId": "KTRbuXBKwi5mepl7pbubEEq5HqZ7bukH31xcsu4Ylr00",
+    "slug": "ethical-kink-safety-consent-and-boundaries",
+    "done": true
+  },
+  {
+    "title": "The art of fantasy",
+    "assetId": "5NKPoyk4RVHra39CW9uM51FWVhQT8CjreGs02TU02Mank",
+    "slug": "the-art-of-fantasy",
+    "done": true
+  },
+  {
+    "title": "Taboo talk",
+    "assetId": "oPGQhAdgyfcmwKkbDS3BX8FJOSac4OWPntXNK02RlK02M",
+    "slug": "taboo-talk",
+    "done": true
+  },
+  {
+    "title": "Dare to dom?",
+    "assetId": "bCm02PIujaQerDncdTxIa01PdIeR02Wa8Ov8SRK2ZutjLQ",
+    "slug": "dare-to-dom",
+    "done": true
+  },
+  {
+    "title": "Online domination tips and tricks",
+    "assetId": "00KcjC2gl1Hdn00K7a02Eu53B7jmIUxQxxGxiUVIuc2Gak",
+    "slug": "online-domination-tips-and-tricks",
+    "done": true
+  },
+  {
+    "title": "Webcam masterclass",
+    "assetId": "ZGtre1NDTl009P2K9jnwaQ0001AUkpaahdK14ANMZQHQWw",
+    "slug": "webcam-masterclass",
+    "done": true
+  },
+  {
+    "title": "Adultwork 101",
+    "assetId": "j8r3Y4SNEz0102beR15l5Dsp2w1ZzyKG8MjEwRxzbeGx00",
+    "slug": "adultwork-101",
+    "done": true
+  },
+  {
+    "title": "What to do with your subs",
+    "assetId": "Ru1F1zI4j02LUFP9DZ6X299dJ5JlTTcNftb9wt3HCEp8",
+    "slug": "what-to-do-with-your-subs",
+    "done": true
+  },
+  {
+    "title": "Body confidence on webcam",
+    "assetId": "MC8f6XC13d1hAfSXCrJyMqElPLzHzpVuSy3t5rGWYt8",
+    "slug": "body-confidence-on-webcam"
+  },
+  {
+    "title": "Burlesque empowerment",
+    "assetId": "reqdIqJ4bjN4bEtABnzFAlrAYEuH8h3H1EcW94ehDsA",
+    "slug": "burlesque-empowerment"
+  },
+  {
+    "title": "Camming confidence",
+    "assetId": "JV1UAnPVQ00YBQKhNXUX02LEyl8iqMyFYeRJ7F6Wdm5RI",
+    "slug": "camming-confidence"
+  },
+  {
+    "title": "Confidence on webcam",
+    "assetId": "jexyx9D2dnVQUYZrrozm02Hhi34rSswoiPkpjI8d00qko",
+    "slug": "confidence-on-webcam"
+  },
+  {
+    "title": "Connecting to your body with Anna",
+    "assetId": "Hfq5015BDXsoXU6nGwuJVshOyCfGAk8QeE3L44aM1td8",
+    "slug": "connecting-to-your-body-with-anna"
+  },
+  {
+    "title": "Credit statement",
+    "assetId": "B8sPj01KnHqOjws5u02YMiH02s7sLeaVVuWzKDMVqqKVo4",
+    "slug": "credit-statement"
+  },
+  {
+    "title": "Credit statement new",
+    "assetId": "bzksGeafh2qzXsj3IpNunwF00PC1QjhWdKA6FSAm6ORg",
+    "slug": "credit-statement-new"
+  },
+  {
+    "title": "Credit statement newer",
+    "assetId": "SphR00FbXLn1rOi48h7xTaWqzonHLN00dtowZAU34px8g",
+    "slug": "credit-statement-newer"
+  },
+  {
+    "title": "ECC team top tips",
+    "assetId": "00bM4sgFgbXsJ5SJFXBOj5oCzZgDRJhc301J2GErE01Sqw",
+    "slug": "ecc-team-top-tips"
+  },
+  {
+    "title": "Empowerment through cyclical living",
+    "assetId": "QqTUAKiOILty02WrSRc02n4tHgHotRPPX6U5D501oOApwA",
+    "slug": "empowerment-through-cyclical-living"
+  },
+  {
+    "title": "Empowerment through nutrition",
+    "assetId": "L18vjK6Y89XvZyTERY5ObkWPsLPFSywCEzHC3Vd89xQ",
+    "slug": "empowerment-through-nutrition"
+  },
+  {
+    "title": "Ethical seduction and sexuality on cam",
+    "assetId": "r01K902f8mDO5JhgJXnDmysrQ8gPR01iP1K02yQAWHpbrH4",
+    "slug": "ethical-seduction-and-sexuality-on-cam"
+  },
+  {
+    "title": "Financial empowerment training",
+    "assetId": "52aa7dHYznqJ602MaLV2ZQYWU98uVeukumXPazMX5102c",
+    "slug": "financial-empowerment-training"
+  },
+  {
+    "title": "Getting back to business - energy management and motivation",
+    "assetId": "bQVjz2nYf7W6i9yZ4LkvOV01GUjzUbaGBkhaGN1SgWko",
+    "slug": "getting-back-to-business-energy-management-and-motivation"
+  },
+  {
+    "title": "Goal setting and motivation (2023)",
+    "assetId": "2z4zgEuMsyYbO62UIUfjMd3x00hA00FoOdYTOgIBXguJM",
+    "slug": "goal-setting-and-motivation-2023"
+  },
+  {
+    "title": "Goal setting and motivation (2024)",
+    "assetId": "SxlZWkOyp45C00WHXPHfEGSW7AEoYtQ4hu00eWE52SpUY",
+    "slug": "goal-setting-and-motivation-2024"
+  },
+  {
+    "title": "Goal setting and motivation (2025)",
+    "assetId": "YMDrV9QWsPZV1dve3mXiUMih5UkNTb01kKZFAuwJ02u02k",
+    "slug": "goal-setting-and-motivation-2025"
+  },
+  {
+    "title": "Goal setting workshop (Sep 2022)",
+    "assetId": "73LIV00C9cvGdcoDHVYJ7Q6Or4wdQAEWAMXjmFeZFM7k",
+    "slug": "goal-setting-workshop-sep-2022"
+  },
+  {
+    "title": "How to add a Wishlist to your profile",
+    "assetId": "1RDNLsse6WyriIRHN9fEgMr9S85xvRZWlGo3MIGuuMc",
+    "slug": "how-to-add-a-wishlist-to-your-profile"
+  },
+  {
+    "title": "How to add items for sale",
+    "assetId": "mzF006kDULEJ259ccJRVkCrQ4UTvU52M4eW601mLyLCpQ",
+    "slug": "how-to-add-items-for-sale"
+  },
+  {
+    "title": "How to be on the front page",
+    "assetId": "9HcJfIjyEVK02VBcMknZwa1nutfrgDzHm5UOpKyDq02bs",
+    "slug": "how-to-be-on-the-front-page"
+  },
+  {
+    "title": "How to find out what you've earned",
+    "assetId": "aVrKGDbukyBQNwr4N800mkCDeU9X8byP59WJKbqWhEWo",
+    "slug": "how-to-find-out-what-youve-earned"
+  },
+  {
+    "title": "How to take content for your profile",
+    "assetId": "BfbZkDfTgRmVNmTt3ez2A9nPMkXp02xxyu3NTwz5dbhs",
+    "slug": "how-to-take-content-for-your-profile"
+  },
+  {
+    "title": "How to update your profile",
+    "assetId": "lZqw4MLGQg4y737GqNpOOvzi3joWcJd3yLnh5SwgbcU",
+    "slug": "how-to-update-your-profile"
+  },
+  {
+    "title": "Let's talk credits",
+    "assetId": "ZTPhICSfmwMi01009QvWNseXyk4jLPalp1X3oONXQMg68",
+    "slug": "lets-talk-credits"
+  },
+  {
+    "title": "Lovense training call",
+    "assetId": "2LuLwHjy025eIeDjBzG6xSd7WhWZUMJUZWBJdemC7Vk00",
+    "slug": "lovense-training-call"
+  },
+  {
+    "title": "Makeup masterclass",
+    "assetId": "vOAeLCWyDa0089QMyB2iLqpgWqng2e3T3XOu0100bwvDrQ",
+    "slug": "makeup-masterclass"
+  },
+  {
+    "title": "Making your webcam calls last longer",
+    "assetId": "f01j6t02zHj3SVXqAR13rDbSI7uIkiiDRv4OBKP1Mwmm8",
+    "slug": "making-your-webcam-calls-last-longer"
+  },
+  {
+    "title": "Manifestation masterclass",
+    "assetId": "mZcT01Hmdo4hs01XY7yBuQ02OkWUj4u31iX8401500pSKyIQ",
+    "slug": "manifestation-masterclass"
+  },
+  {
+    "title": "Mental health and wellbeing strategies",
+    "assetId": "kKMeP23nsufQnI02AXX7KDtK9Rw7eghNQkjEiFEe1qMU",
+    "slug": "mental-health-and-wellbeing-strategies"
+  },
+  {
+    "title": "Mental health check-in (Sep 2022)",
+    "assetId": "DALlr5RgIL3m491m3SreKHeCyZpf02QGaw2y7uv9E9UY",
+    "slug": "mental-health-check-in-sep-2022"
+  },
+  {
+    "title": "Mental health fundamentals",
+    "assetId": "3qrRUCSTdEbURcZvflyR6t3hSBhriR01GINHsDD22K00U",
+    "slug": "mental-health-fundamentals"
+  },
+  {
+    "title": "Navigating the new site",
+    "assetId": "psZ51CSWHAvDE00ojEAi01fzblRCsmYc02FkXFC00ZO39qE",
+    "slug": "navigating-the-new-site"
+  },
+  {
+    "title": "Navigating the new site using a phone",
+    "assetId": "XclHFR00PWj2gK2xLhNDL6hDoPmiG400sn702gSU0101Ba6Y",
+    "slug": "navigating-the-new-site-using-a-phone"
+  },
+  {
+    "title": "Neurodiversity in webcam modelling",
+    "assetId": "GAL02WJhk3XkN02kwoS518JbSVcNWl01UTZZ2mLeDjn8tA",
+    "slug": "neurodiversity-in-webcam-modelling"
+  },
+  {
+    "title": "Perfect your profile and understand your credits",
+    "assetId": "2UrNlxIrfcYtPlE69abzyieapLhNS3BuqW3EGq013o6w",
+    "slug": "perfect-your-profile-and-understand-your-credits"
+  },
+  {
+    "title": "Phone chat training call with Mentor Sophie",
+    "assetId": "JtRDfl4xjx7tWUtBw65vOG5CvfpOW00y00O4Hv7LlbyRQ",
+    "slug": "phone-chat-training-call-with-mentor-sophie"
+  },
+  {
+    "title": "Photoshoot 101",
+    "assetId": "gQilD2cRifEvMVstwDLvStA5MF3029L701WVZp9HZw00TQ",
+    "slug": "photoshoot-101"
+  },
+  {
+    "title": "Profile maintenance and upkeep",
+    "assetId": "8IQKY8RpCvCCA5RDqW01Fu0257Ngz8nMhXJwMXkM37G14",
+    "slug": "profile-maintenance-and-upkeep"
+  },
+  {
+    "title": "Rose Radford: Money Blocks",
+    "assetId": "007BbD66rkuIFa7tIw5HGAfGP02ueX25qb9CKgaUXI73Y",
+    "slug": "rose-radford-money-blocks"
+  },
+  {
+    "title": "Self worth in sex work",
+    "assetId": "ey01RG7tAbGMAYvcBWhZh02nNyWCAJoK4QRn01udvBSAz8",
+    "slug": "self-worth-in-sex-work"
+  },
+  {
+    "title": "The girlfriend experience",
+    "assetId": "nxPulv47Ay6xfd3LAucPVYKH9ZZmd201KQsS3hhqbjZA",
+    "slug": "the-girlfriend-experience"
+  },
+  {
+    "title": "The illusion of control",
+    "assetId": "77k3ekpqKNpu7wWhH401RCAYicvP5PkzeNceREes9fGc",
+    "slug": "the-illusion-of-control"
+  },
+  {
+    "title": "Trainer client",
+    "assetId": "shPluzBWZEKc9d9iXPvK024ygwkFLKo020200bnnPhXPrNQ",
+    "slug": "trainer-client"
+  },
+  {
+    "title": "Up your Adultwork game with G",
+    "assetId": "IlD3Cc01fdchpQLZbqCadQeBDinaU9yVSQWicBXYC8ZQ",
+    "slug": "up-your-adultwork-game-with-g"
+  },
+  {
+    "title": "Webcam essentials training call",
+    "assetId": "QGufiosAzPbAWeKxSNm1700gMn0100sPZOM1xTqfhnqIII",
+    "slug": "webcam-essentials-training-call"
+  },
+  {
+    "title": "Webcam refresh - up your game",
+    "assetId": "OnVd8028N9iOoi02z02yi901VfoPhuybjCvwoIy1RJLmsgY",
+    "slug": "webcam-refresh-up-your-game"
+  },
+  {
+    "title": "Webcamming full time",
+    "assetId": "uJMLGFoHQUkhSR5D2oTOHtuLWdQhKOL02jFgMb8nbRtM",
+    "slug": "webcamming-full-time"
+  },
+  {
+    "title": "Welcome course conclusion",
+    "assetId": "ZbgvVzCrOPabUS9GtY02I7O4l9OYja8lbn7D3Ve7tGe4",
+    "slug": "welcome-course-conclusion"
+  },
+  {
+    "title": "Welcome to the ECC",
+    "assetId": "Bwlh9myPHuYMJKJCJxIJtU00mqamRpZ02VbVg01RZJEAIQ",
+    "slug": "welcome-to-the-ecc"
+  },
+  {
+    "title": "What makes us different from other agencies?",
+    "assetId": "l3hqFlQwJ62Hq6KBztpvGrQWAWn81ohpFvcD1WxvFkw",
+    "slug": "what-makes-us-different-from-other-agencies"
+  },
+  {
+    "title": "What to say and do on webcam - your first time",
+    "assetId": "wCIDWAOfoCLkAoFsSLptnGE02XubfQJlx3Nv96dfP9dQ",
+    "slug": "what-to-say-and-do-on-webcam-your-first-time"
+  },
+  {
+    "title": "What to say and do on webcam introduction",
+    "assetId": "GBRDZymVYH01BGYVwPD61kpI2ufKtr011vaMsSWEFV4Gg",
+    "slug": "what-to-say-and-do-on-webcam-introduction"
+  },
+  {
+    "title": "What to say and do on webcam masterclass",
+    "assetId": "9GmY42BgUge4f39Gt4TAu02VyBHO1yLaLXTSzXLQ2HG8",
+    "slug": "what-to-say-and-do-on-webcam-masterclass"
+  },
+  {
+    "title": "Women of webcam information and inspiration",
+    "assetId": "ZgpQhbEHjrPRfo01rT00GybFyIDIZi9h016EmM14GWHmEE",
+    "slug": "women-of-webcam-information-and-inspiration"
+  },
+  {
+    "title": "Yoga with G 1",
+    "assetId": "3FTQhyIKsbFjgvuZnMnvpLW02POrTUO01OEebj2hR3DyA",
+    "slug": "yoga-with-g-1"
+  },
+  {
+    "title": "Yoga with G 2",
+    "assetId": "YAqoTq01eST9cp5026aRPoW01ZFwLvPt5900f01KvurV01ffo",
+    "slug": "yoga-with-g-2"
+  }
 ]
