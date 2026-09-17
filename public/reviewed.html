@@ -48,6 +48,9 @@
   <div class="card">
     <strong style="font-size:13px">Files to publish</strong>
     <ul class="files" id="list"><li>loading…</li></ul>
+    <label style="font-weight:400;font-size:13px;margin-top:10px">
+      <input type="checkbox" id="again"> also re-publish the ones already done
+    </label>
   </div>
 
   <div id="out">Ready.</div>
@@ -65,10 +68,19 @@ function log(msg, cls) {
   $('out').scrollTop = $('out').scrollHeight;
 }
 
+let all = [];
+function render() {
+  const showAll = $('again').checked;
+  items = showAll ? all : all.filter(x => !x.done);
+  $('list').innerHTML = items.length
+    ? items.map(x => `<li>${x.title}</li>`).join('')
+    : '<li>nothing pending</li>';
+  $('go').disabled = items.length === 0;
+}
 fetch('/vtt/manifest.json').then(r => r.json()).then(m => {
-  items = m;
-  $('list').innerHTML = m.map(x => `<li>${x.title}</li>`).join('');
+  all = m; render();
 }).catch(e => { $('list').innerHTML = '<li class="err">could not load manifest</li>'; });
+$('again').onchange = render;
 
 $('go').onclick = async () => {
   const key = $('key').value.trim();
