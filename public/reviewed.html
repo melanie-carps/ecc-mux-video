@@ -77,7 +77,7 @@ function render() {
     : '<li>nothing pending</li>';
   $('go').disabled = items.length === 0;
 }
-fetch('/vtt/manifest.json').then(r => r.json()).then(m => {
+fetch('/vtt/manifest.json?v=' + Date.now(), { cache: 'no-store' }).then(r => r.json()).then(m => {
   all = m; render();
 }).catch(e => { $('list').innerHTML = '<li class="err">could not load manifest</li>'; });
 $('again').onchange = render;
